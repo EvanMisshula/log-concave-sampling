@@ -5,7 +5,8 @@ category: optimal transport
 tags:  education, persistence, resilience
 slug: office hours
 
-![officeHRs]({static}/images/graduation.jpeg)
+
+<p><img src="/log-concave-sampling/images/graduation.jpeg" width="600px" alt="officeHRs" title="respect"></p>
 
 
 > Treat people as if they were what they ought to be, and you help them to become what they are capable of becoming.
@@ -24,7 +25,7 @@ martingale.
 I don't know if it is typical that this many people smile in a math class
 but I have not seen it often. The OT Reading Group came out of a graduate
 class on Probability and Analysis.  Jose, our organizer was using OT in his
-research on multiple sorces of factor risk and suggested Dr. Karatzas 
+research on multiple sources of factor risk and suggested Dr. Karatzas 
 give us his treatment of the material. ([Dr. Nestor Gullien](https://www.ndguillen.com/))
 gave 4 lectures. The lectures were so popular that we formed a 
 reading group for the next semester.
