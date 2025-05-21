@@ -4,10 +4,9 @@ SITEURL = ""
 
 PATH = "content"
 DISPLAY_PAGES_ON_MENU = False
-MENUITEMS = [('ambition','/pages/ambition.html'),
-             ('background','/pages/background.html'),
-             ('contact','/pages/contact.html'),
-]
+DISPLAY_PAGES_ON_MENU = True
+DISPLAY_CATEGORIES_ON_MENU = True
+MENUITEMS = []  # Let Pelican generate them properly
 
 TIMEZONE = 'America/New_York'
 
@@ -38,6 +37,7 @@ MARKDOWN = {
     'output_format': 'html5',
 }
 
+THEME = 'themes/notmyidea'
 
 
 # Blogroll
@@ -57,4 +57,4 @@ MARKDOWN = {
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-RELATIVE_URLS = False
+RELATIVE_URLS = True

@@ -20,3 +20,14 @@ DELETE_OUTPUT_DIRECTORY = True
 
 # DISQUS_SITENAME = ""
 # GOOGLE_ANALYTICS = ""
+SITEURL = "https://evanmisshula.github.io/log-concave-sampling"
+RELATIVE_URLS = False
+
+DISPLAY_PAGES_ON_MENU = True
+DISPLAY_CATEGORIES_ON_MENU = True
+MENUITEMS = []  # Don't use root-relative paths
+
+# Force SITEURL into all templates
+JINJA_GLOBALS = {
+    'SITEURL': SITEURL
+}
