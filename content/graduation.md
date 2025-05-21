@@ -5,7 +5,7 @@ category: optimal transport
 tags:  education, persistence, resilience
 slug: office hours
 
-<p><img src="{{ SITEURL }}/images/graduation.jpeg" width="600px" alt="officeHRs" title="respect"></p>
+![officeHRs]({static}/images/graduation.jpeg)
 
 
 > Treat people as if they were what they ought to be, and you help them to become what they are capable of becoming.
