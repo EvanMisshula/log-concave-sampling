@@ -55,14 +55,28 @@
 ~Henri Poincaré, <strong>Science and Method</strong> (1908)</p>
 </blockquote>
 <p><strong>You cannot have large fluctuations in a function without large gradients.</strong></p>
-<p>Today we had our first lecture of the summer. I must have read the</p>
+<p>Yesterday, I attended the first lecture of our summer course on<br>
+optimal transport (and log-concave-sampling), a field that explores<br>
+how to move probability distributions efficiently, with applications<br>
+in machine learning, physics, and beyond. The focus was on the<br>
+Poincaré inequality, a cornerstone of functional analysis that<br>
+connects a function’s variance to the energy of its gradients. This<br>
+lecture didn’t just reteach familiar notes—it brought the mathematics<br>
+to life.</p>
+<p>Today we had our first lecture of the summer. I must have read both 6<br>
+and 6a countless times before class, along with the paper they were<br>
+based on. Here is the link:</p>
 <p><a href="/{log-concave-sampling}/pages/background.html">notes on the Poincaré Inequality</a></p>
-<p>a hundred times before class, along with the<br>
-paper they were based on. Yet the lecture did not merely repeat the<br>
-derivations of the Ornstein–Uhlenbeck (OU) semigroup and its infinitesimal<br>
-generator $L$.</p>
-<p>Instead, the lecture invited us to wrestle with four foundational inequalities<br>
-in their most tractable setting: a quadratic potential and a linear drift.</p>
+<p>Yet the lecture offered fresh insight. Our professor introduced the<br>
+Ornstein–Uhlenbeck (OU) semigroup, a mathematical tool that models how<br>
+functions evolve toward equilibrium, much like heat diffusing through<br>
+a medium. We explored its properties in the simplest setting: a<br>
+quadratic potential with linear drift.</p>
+<p>Yet the lecture did not merely repeat the derivations of the<br>
+Ornstein–Uhlenbeck (OU) semigroup and its infinitesimal generator<br>
+$L$. Instead, the lecture invited us to wrestle with four foundational<br>
+inequalities in their most tractable setting: a quadratic potential<br>
+and a linear drift.</p>
 <p>After some formal algebraic manipulations, our professor introduced<br>
 us to the functional analogue of covariance, the <strong>Dirichlet form</strong>:</p>
 <p>\begin{equation}<br>
@@ -119,13 +133,19 @@ I_{\gamma}(f) \triangleq \int \frac{| \nabla f |^2}{f} \, d\gamma<br>
 <p>\begin{equation}<br>
 \frac{d}{dt} \mathbb{E}[f_t] = - I_{\gamma}(P_t f)<br>
 \end{equation}</p>
-<p>We only proved Poincaré today, but the others now come into view. Future<br>
-lectures will extend these results to Langevin–Smoluchowski dynamics.</p>
+<h2 id="looking-ahead">Looking ahead</h2>
+<p>We only proved the Poincaré inequality today, but the groundwork is<br>
+laid for exploring Langevin–Smoluchowski dynamics, which apply these<br>
+ideas to problems like sampling in high-dimensional spaces. Future<br>
+lectures promise to deepen our understanding of these connections.</p>
 <blockquote>
 <p>A good proof should teach you something.<br>
 —Ioannis Karatzas</p>
 </blockquote>
-<p>Today, my friends, we learned.</p>                    </article>
+<p>Yesterday, we learned not just a proof, but another way of seeing<br>
+mathematics as a beautiful, interconnected system. I invite readers to<br>
+explore the notes and share their thoughts on these elegant<br>
+inequalities.</p>                    </article>
                 </aside><!-- /#featured -->
                     <section id="content" class="body">
                         <h1>Other articles</h1>
