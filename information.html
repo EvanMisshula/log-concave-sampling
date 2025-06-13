@@ -89,7 +89,7 @@ very beginning of the lecture:</p>
 \frac{d}{dt} \mathbb{E}^{f}(t) = I_{\gamma} (P_{t}f) <br>
 \end{equation}</p>
 <p>What is the Fisher information in this context and what does it mean?</p>
-<p><a id="orgbf2ce90"></a></p>
+<p><a id="org29fee6d"></a></p>
 <h1 id="setting-ornsteinuhlenbeck-ou-process">Setting: Ornstein–Uhlenbeck (OU) Process</h1>
 <p>The <strong>OU process</strong> $ X_t $ is a continuous-time Gaussian Markov<br>
 process satisfying the SDE:</p>
@@ -107,29 +107,27 @@ dX_t = -\theta X_t \, dt + \sigma \, dB_t<br>
 X_t \sim \mathcal{N}\left(0, \frac{\sigma^2}{2\theta}\right)<br>
 \quad \text{as } t \to \infty<br>
 \end{equation}</p>
-<p><a id="org9e9d170"></a></p>
+<p><a id="org3ecf443"></a></p>
 <h1 id="fisher-information-of-a-function-fx_t">Fisher Information of a Function $ f(X_t) $</h1>
 <p>We ask: <strong>What does it mean to take the Fisher Information of a<br>
 function of the OU process?</strong></p>
 <p>There are multiple interpretations depending on the parameter.</p>
-<p><a id="org3bdd73d"></a></p>
+<p><a id="org4ca8ff1"></a></p>
 <h2 id="1-statistical-inference-perspective">1. Statistical Inference Perspective</h2>
 <p>We consider the Fisher information of $ f(X_t) $ with respect to a<br>
 parameter $ \theta $.</p>
 <p>\begin{equation}<br>
-I(\theta; f(X_t)) = \mathbb{E}<em>\theta<br>
-\left[ \left( \frac{\partial}{\partial \theta}<br>
-\log p</em>\theta(f(X_t)) \right)^2 \right]<br>
+I(\theta; f(X_t)) = \mathbb{E}<em>\theta \left[ \left( \frac{\partial}{\partial \theta} \log p</em>\theta(f(X_t)) \right)^2 \right]<br>
 \end{equation}</p>
 <p>Where:</p>
 <ul>
 <li>$ p_\theta $ is the density of $ f(X_t) $ under parameter $ \theta $</li>
 <li>This helps assess how well $ f(X_t) $ can estimate $ \theta $</li>
 </ul>
-<p><a id="orgf8b1952"></a></p>
+<p><a id="org691265e"></a></p>
 <h2 id="2-information-geometry-measure-theoretic-perspective">2. Information Geometry / Measure-Theoretic Perspective</h2>
 <p>Let $ X_t \sim \mu $ and $ f: \mathbb{R} \to \mathbb{R} $ be<br>
-smooth. Define a new measure $ \nu = f_# \mu $, the pushforward of<br>
+smooth. Define a new measure $ \nu = f_{\sharp} \mu $, the pushforward of<br>
 $ \mu $ by $ f $.</p>
 <p>Then:</p>
 <p>\begin{equation}<br>
@@ -138,7 +136,7 @@ I(\nu | \mu) = \int \left| \nabla \log<br>
 \end{equation}</p>
 <p>This quantifies how much information is preserved after transformation by<br>
 $ f $.</p>
-<p><a id="org177a4c6"></a></p>
+<p><a id="org8955942"></a></p>
 <h2 id="3-functional-fisher-information-bakryemery-form">3. Functional Fisher Information (Bakry–Émery Form)</h2>
 <p>Finally, this is how it is used in Wednesday&rsquo;s lecture. Don&rsquo;t miss the<br>
 delightful story of how this was published in a French journal for<br>
@@ -150,7 +148,7 @@ delightful story of how this was published in a French journal for<br>
 <p>This form is used in log-Sobolev and Poincaré inequalities. It<br>
 measures the ``gradient content&rsquo;&rsquo; of $ f $ under the geometry of the<br>
 invariant measure $ \mu $.</p>
-<p><a id="org9b218e8"></a></p>
+<p><a id="org64eedc2"></a></p>
 <h1 id="summary-table">Summary Table</h1>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -193,7 +191,7 @@ invariant measure $ \mu $.</p>
 </tbody>
 </table>
 
-<p><a id="org49f95ac"></a></p>
+<p><a id="orgcfc19f7"></a></p>
 <h1 id="where-to-get-more">Where to get more</h1>
 <p>The link to the lecture is on our ambition page under: Past lectures</p>
 <p>The material for next week&rsquo;s lecture on time reversal for Markov<br>
