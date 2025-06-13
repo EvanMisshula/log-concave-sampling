@@ -21,7 +21,7 @@
 			</script>
                         <title>Fisher information</title>
                         <link rel="stylesheet" href="./theme/css/main.css" />
-    <meta name="description" content="social.png" width="600px" alt="officeHRs" title="respect"> HWI connects disorder, distance, and fluctuation via geometry. In our second summer..." />
+    <meta name="description" content="HWI connects disorder, distance, and fluctuation via geometry. In our second summer session, we explored functional inequalities including the..." />
         </head>
 
         <body id="index" class="home">
@@ -54,7 +54,7 @@
                 </address>
         <p>In <a href="./category/optimal-transport.html">optimal transport</a>.</p>
 <p>tags: <a href="./tag/education.html">education</a> <a href="./tag/inequalities.html">inequalities</a> </p>        
-</footer><!-- /.post-info -->        <p><img src="/log-concave-sampling/images/villani<sub>social.png</sub>" width="600px" alt="officeHRs" title="respect"></p>
+</footer><!-- /.post-info -->        <p><img src="/log-concave-sampling/images/villani-social.png" width="600px" alt="officeHRs" title="respect"></p>
 
 <p><strong>HWI connects disorder, distance, and fluctuation via geometry.</strong></p>
 <p>In our second summer session, we explored functional inequalities<br>
@@ -69,16 +69,27 @@ present. The excellent notes and video will be on our ambition page:<br>
 <p>The rest of this note should summarize rest of the class and how we used the<br>
 multidimensional change of variables but I needed to ruminate on the<br>
 very beginning of the lecture:</p>
-<p>\begin{align}<br>
-\frac{d}{dt} \mathbb{E}^{f}(t) &amp; = \frac{d}{dt} \int h(P_{t} f ) d \gamma \<br>
-                       &amp; = \int h&rsquo;(P_{t}f)L(P_{t}f) d \gamma \<br>
-                       &amp; = \int \log{(P_{t}f)}L(P_{t}f) d \gamma \<br>
-                       &amp; = - \int \nabla P_{t}f \cdot \nabla (\log{(P_{t}f)}) d \gamma \<br>
-                       &amp; = - \int \frac{|\nabla (P_{t}f)|^2}{P_{t}f} d \gamma \<br>
-                       &amp; = I_{\gamma} (P_{t}f)<br>
-\end{align}</p>
+<p>\begin{equation}<br>
+\frac{d}{dt} \mathbb{E}^{f}(t) = \frac{d}{dt} \int h(P_{t} f ) d \gamma <br>
+\end{equation}</p>
+<p>\begin{equation}<br>
+\frac{d}{dt} \mathbb{E}^{f}(t) = \int h&rsquo;(P_{t}f)L(P_{t}f) d \gamma <br>
+\end{equation}</p>
+<p>\begin{equation}<br>
+\frac{d}{dt} \mathbb{E}^{f}(t) = \int \log{(P_{t}f)}L(P_{t}f) d \gamma<br>
+\end{equation}</p>
+<p>\begin{equation}<br>
+\frac{d}{dt} \mathbb{E}^{f}(t) = - \int \nabla P_{t}f \cdot \nabla (\log{(P_{t}f)}) d \gamma <br>
+\end{equation}</p>
+<p>\begin{equation}<br>
+\frac{d}{dt} \mathbb{E}^{f}(t) = - \int \frac{|\nabla (P_{t}f)|^2}{P_{t}f} d \gamma<br>
+\end{equation}</p>
+<p>and finally:</p>
+<p>\begin{equation}<br>
+\frac{d}{dt} \mathbb{E}^{f}(t) = I_{\gamma} (P_{t}f) <br>
+\end{equation}</p>
 <p>What is the Fisher information in this context and what does it mean?</p>
-<p><a id="org1ac1efe"></a></p>
+<p><a id="orgbf2ce90"></a></p>
 <h1 id="setting-ornsteinuhlenbeck-ou-process">Setting: Ornstein–Uhlenbeck (OU) Process</h1>
 <p>The <strong>OU process</strong> $ X_t $ is a continuous-time Gaussian Markov<br>
 process satisfying the SDE:</p>
@@ -96,12 +107,12 @@ dX_t = -\theta X_t \, dt + \sigma \, dB_t<br>
 X_t \sim \mathcal{N}\left(0, \frac{\sigma^2}{2\theta}\right)<br>
 \quad \text{as } t \to \infty<br>
 \end{equation}</p>
-<p><a id="org0ba1f2f"></a></p>
+<p><a id="org9e9d170"></a></p>
 <h1 id="fisher-information-of-a-function-fx_t">Fisher Information of a Function $ f(X_t) $</h1>
 <p>We ask: <strong>What does it mean to take the Fisher Information of a<br>
 function of the OU process?</strong></p>
 <p>There are multiple interpretations depending on the parameter.</p>
-<p><a id="orge41a56d"></a></p>
+<p><a id="org3bdd73d"></a></p>
 <h2 id="1-statistical-inference-perspective">1. Statistical Inference Perspective</h2>
 <p>We consider the Fisher information of $ f(X_t) $ with respect to a<br>
 parameter $ \theta $.</p>
@@ -115,7 +126,7 @@ I(\theta; f(X_t)) = \mathbb{E}<em>\theta<br>
 <li>$ p_\theta $ is the density of $ f(X_t) $ under parameter $ \theta $</li>
 <li>This helps assess how well $ f(X_t) $ can estimate $ \theta $</li>
 </ul>
-<p><a id="org7d5bb6c"></a></p>
+<p><a id="orgf8b1952"></a></p>
 <h2 id="2-information-geometry-measure-theoretic-perspective">2. Information Geometry / Measure-Theoretic Perspective</h2>
 <p>Let $ X_t \sim \mu $ and $ f: \mathbb{R} \to \mathbb{R} $ be<br>
 smooth. Define a new measure $ \nu = f_# \mu $, the pushforward of<br>
@@ -127,7 +138,7 @@ I(\nu | \mu) = \int \left| \nabla \log<br>
 \end{equation}</p>
 <p>This quantifies how much information is preserved after transformation by<br>
 $ f $.</p>
-<p><a id="org7c020e7"></a></p>
+<p><a id="org177a4c6"></a></p>
 <h2 id="3-functional-fisher-information-bakryemery-form">3. Functional Fisher Information (Bakry–Émery Form)</h2>
 <p>Finally, this is how it is used in Wednesday&rsquo;s lecture. Don&rsquo;t miss the<br>
 delightful story of how this was published in a French journal for<br>
@@ -139,7 +150,7 @@ delightful story of how this was published in a French journal for<br>
 <p>This form is used in log-Sobolev and Poincaré inequalities. It<br>
 measures the ``gradient content&rsquo;&rsquo; of $ f $ under the geometry of the<br>
 invariant measure $ \mu $.</p>
-<p><a id="org8669a44"></a></p>
+<p><a id="org9b218e8"></a></p>
 <h1 id="summary-table">Summary Table</h1>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -182,7 +193,7 @@ invariant measure $ \mu $.</p>
 </tbody>
 </table>
 
-<p><a id="org74a2834"></a></p>
+<p><a id="org49f95ac"></a></p>
 <h1 id="where-to-get-more">Where to get more</h1>
 <p>The link to the lecture is on our ambition page under: Past lectures</p>
 <p>The material for next week&rsquo;s lecture on time reversal for Markov<br>
