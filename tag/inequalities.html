@@ -37,7 +37,165 @@
 
                 <aside id="featured" class="body">
                     <article>
-                        <h1 class="entry-title"><a href="../inequalities.html">Diffusions and Inequalities</a></h1>
+                        <h1 class="entry-title"><a href="../information.html">Fisher information</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2025-06-13T00:00:00-04:00">
+                Published: Fri 13 June 2025
+        </abbr>
+
+                <address class="vcard author">
+                        By                                 <a class="url fn" href="../author/emisshula.html">emisshula</a>
+                </address>
+        <p>In <a href="../category/optimal-transport.html">optimal transport</a>.</p>
+<p>tags: <a href="../tag/education.html">education</a> <a href="../tag/inequalities.html">inequalities</a> </p>        
+</footer><!-- /.post-info --><p><img src="/log-concave-sampling/images/villani<sub>social.png</sub>" width="600px" alt="officeHRs" title="respect"></p>
+
+<p><strong>HWI connects disorder, distance, and fluctuation via geometry.</strong></p>
+<p>In our second summer session, we explored functional inequalities<br>
+including the derivation of HWI. In fact, whereas last time we proved<br>
+only the Poincare inequality, today we wrestled with the entire<br>
+bestiary of functional inequalities.</p>
+<p>Thankfully, we (and by that I mean Caio) did a much better job of<br>
+recording the session although I stil have some quibbles with how much<br>
+of the board was captured and inconsistent audio.  For those of us not<br>
+present. The excellent notes and video will be on our ambition page:<br>
+<a href="file:///pages/background.html">notes on the Poincaré Inequality</a></p>
+<p>The rest of this note should summarize rest of the class and how we used the<br>
+multidimensional change of variables but I needed to ruminate on the<br>
+very beginning of the lecture:</p>
+<p>\begin{align}<br>
+\frac{d}{dt} \mathbb{E}^{f}(t) &amp; = \frac{d}{dt} \int h(P_{t} f ) d \gamma \<br>
+                       &amp; = \int h&rsquo;(P_{t}f)L(P_{t}f) d \gamma \<br>
+                       &amp; = \int \log{(P_{t}f)}L(P_{t}f) d \gamma \<br>
+                       &amp; = - \int \nabla P_{t}f \cdot \nabla (\log{(P_{t}f)}) d \gamma \<br>
+                       &amp; = - \int \frac{|\nabla (P_{t}f)|^2}{P_{t}f} d \gamma \<br>
+                       &amp; = I_{\gamma} (P_{t}f)<br>
+\end{align}</p>
+<p>What is the Fisher information in this context and what does it mean?</p>
+<p><a id="org1ac1efe"></a></p>
+<h1 id="setting-ornsteinuhlenbeck-ou-process">Setting: Ornstein–Uhlenbeck (OU) Process</h1>
+<p>The <strong>OU process</strong> $ X_t $ is a continuous-time Gaussian Markov<br>
+process satisfying the SDE:</p>
+<p>\begin{equation}<br>
+dX_t = -\theta X_t \, dt + \sigma \, dB_t<br>
+\end{equation}</p>
+<p>Where:</p>
+<ul>
+<li>$ \theta &gt; 0 $: rate of mean reversion</li>
+<li>$ \sigma &gt; 0 $: diffusion coefficient</li>
+<li>$ B_t $: standard Brownian motion</li>
+</ul>
+<p>The stationary distribution is:</p>
+<p>\begin{equation}<br>
+X_t \sim \mathcal{N}\left(0, \frac{\sigma^2}{2\theta}\right)<br>
+\quad \text{as } t \to \infty<br>
+\end{equation}</p>
+<p><a id="org0ba1f2f"></a></p>
+<h1 id="fisher-information-of-a-function-fx_t">Fisher Information of a Function $ f(X_t) $</h1>
+<p>We ask: <strong>What does it mean to take the Fisher Information of a<br>
+function of the OU process?</strong></p>
+<p>There are multiple interpretations depending on the parameter.</p>
+<p><a id="orge41a56d"></a></p>
+<h2 id="1-statistical-inference-perspective">1. Statistical Inference Perspective</h2>
+<p>We consider the Fisher information of $ f(X_t) $ with respect to a<br>
+parameter $ \theta $.</p>
+<p>\begin{equation}<br>
+I(\theta; f(X_t)) = \mathbb{E}<em>\theta<br>
+\left[ \left( \frac{\partial}{\partial \theta}<br>
+\log p</em>\theta(f(X_t)) \right)^2 \right]<br>
+\end{equation}</p>
+<p>Where:</p>
+<ul>
+<li>$ p_\theta $ is the density of $ f(X_t) $ under parameter $ \theta $</li>
+<li>This helps assess how well $ f(X_t) $ can estimate $ \theta $</li>
+</ul>
+<p><a id="org7d5bb6c"></a></p>
+<h2 id="2-information-geometry-measure-theoretic-perspective">2. Information Geometry / Measure-Theoretic Perspective</h2>
+<p>Let $ X_t \sim \mu $ and $ f: \mathbb{R} \to \mathbb{R} $ be<br>
+smooth. Define a new measure $ \nu = f_# \mu $, the pushforward of<br>
+$ \mu $ by $ f $.</p>
+<p>Then:</p>
+<p>\begin{equation}<br>
+I(\nu | \mu) = \int \left| \nabla \log<br>
+\left( \frac{d\nu}{d\mu} \right) \right|^2 \, d\nu<br>
+\end{equation}</p>
+<p>This quantifies how much information is preserved after transformation by<br>
+$ f $.</p>
+<p><a id="org7c020e7"></a></p>
+<h2 id="3-functional-fisher-information-bakryemery-form">3. Functional Fisher Information (Bakry–Émery Form)</h2>
+<p>Finally, this is how it is used in Wednesday&rsquo;s lecture. Don&rsquo;t miss the<br>
+delightful story of how this was published in a French journal for<br>
+&ldquo;friends and family only.&rdquo;</p>
+<p>For a positive density $ f $ w.r.t. invariant measure $ \mu $, define:</p>
+<p>\begin{equation}<br>
+\mathcal{I}(f) := \int \frac{|\nabla f|^2}{f} \, d\mu<br>
+\end{equation}</p>
+<p>This form is used in log-Sobolev and Poincaré inequalities. It<br>
+measures the ``gradient content&rsquo;&rsquo; of $ f $ under the geometry of the<br>
+invariant measure $ \mu $.</p>
+<p><a id="org8669a44"></a></p>
+<h1 id="summary-table">Summary Table</h1>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Perspective</th>
+<th scope="col" class="org-left">Interpretation of Fisher Information of \( f(X_t) \)</th>
+<th scope="col" class="org-left">Use Case</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td class="org-left">Statistical</td>
+<td class="org-left">Information about parameter \( \theta \)</td>
+<td class="org-left">Estimation and inference</td>
+</tr>
+
+
+<tr>
+<td class="org-left">Information Geometry</td>
+<td class="org-left">Fisher info of the pushforward measure \( f_\#\mu \)</td>
+<td class="org-left">Functional inequalities, entropy</td>
+</tr>
+
+
+<tr>
+<td class="org-left">Diffusion Semigroup</td>
+<td class="org-left">Gradient form \( \mathcal{I}(f) \)</td>
+<td class="org-left">Transport, log-Sobolev</td>
+</tr>
+</tbody>
+</table>
+
+<p><a id="org74a2834"></a></p>
+<h1 id="where-to-get-more">Where to get more</h1>
+<p>The link to the lecture is on our ambition page under: Past lectures</p>
+<p>The material for next week&rsquo;s lecture on time reversal for Markov<br>
+chains and image generation is in our background material. Until then,<br>
+delight in the privledge to work hard to see beautiful phenomena and<br>
+the mathematics that describes them</p>                    </article>
+                </aside><!-- /#featured -->
+                    <section id="content" class="body">
+                        <h1>Other articles</h1>
+                        <hr />
+                        <ol id="posts-list" class="hfeed">
+
+                <li><article class="hentry">
+                    <header>
+                        <h1><a href="../inequalities.html" rel="bookmark"
+                               title="Permalink to Diffusions and Inequalities">Diffusions and Inequalities</a></h1>
+                    </header>
+
+                    <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2025-06-04T00:00:00-04:00">
                 Published: Wed 04 June 2025
@@ -48,105 +206,15 @@
                 </address>
         <p>In <a href="../category/optimal-transport.html">optimal transport</a>.</p>
 <p>tags: <a href="../tag/education.html">education</a> <a href="../tag/inequalities.html">inequalities</a> </p>        
-</footer><!-- /.post-info --><p><img src="/log-concave-sampling/images/poincareQuote.jpg" width="600px" alt="officeHRs" title="respect"></p>
+</footer><!-- /.post-info -->                        <p><img src="/log-concave-sampling/images/poincareQuote.jpg" width="600px" alt="officeHRs" title="respect"></p>
 
 <blockquote>
-<p>The scientist does not study nature because it is useful to do so. He studies it because he takes pleasure in it, and he takes pleasure in it because it is beautiful. If nature were not beautiful it would not be worth knowing, and life would not be worth living.<br>
-~Henri Poincaré, <strong>Science and Method</strong> (1908)</p>
-</blockquote>
-<p><strong>You cannot have large fluctuations in a function without large gradients.</strong></p>
-<p>Yesterday, I attended the first lecture of our summer course on<br>
-optimal transport (and log-concave-sampling), a field that explores<br>
-how to move probability distributions efficiently, with applications<br>
-in machine learning, physics, and beyond. The focus was on the<br>
-Poincaré inequality, a cornerstone of functional analysis that<br>
-connects a function’s variance to the energy of its gradients. This<br>
-lecture didn’t just reteach familiar notes—it brought the mathematics<br>
-to life.</p>
-<p>Today we had our first lecture of the summer. I must have read both 6<br>
-and 6a countless times before class, along with the paper they were<br>
-based on. Here is the link:</p>
-<p><a href="/{log-concave-sampling}/pages/background.html">notes on the Poincaré Inequality</a></p>
-<p>Yet the lecture offered fresh insight. Our professor introduced the<br>
-Ornstein–Uhlenbeck (OU) semigroup, a mathematical tool that models how<br>
-functions evolve toward equilibrium, much like heat diffusing through<br>
-a medium. We explored its properties in the simplest setting: a<br>
-quadratic potential with linear drift.</p>
-<p>Yet the lecture did not merely repeat the derivations of the<br>
-Ornstein–Uhlenbeck (OU) semigroup and its infinitesimal generator<br>
-$L$. Instead, the lecture invited us to wrestle with four foundational<br>
-inequalities in their most tractable setting: a quadratic potential<br>
-and a linear drift.</p>
-<p>After some formal algebraic manipulations, our professor introduced<br>
-us to the functional analogue of covariance, the <strong>Dirichlet form</strong>:</p>
-<p>\begin{equation}<br>
-\mathcal{E}(f,g) \triangleq \int_{\mathbb{R}^{n}} \langle \nabla f, \nabla g \rangle \, d\gamma<br>
-\end{equation}</p>
-<p>and its self-interaction, the <strong>Dirichlet energy</strong>:</p>
-<p>\begin{equation}<br>
-\mathcal{E}(f,f) = \int_{\mathbb{R}^{n}} | \nabla f |^{2} \, d\gamma<br>
-\end{equation}</p>
-<p>We were reminded that the OU semigroup $ P_t $ satisfies:</p>
-<p>\begin{equation}<br>
-\nabla (P_t f)(x) = e^{-t} P_t(\nabla f)(x)<br>
-\end{equation}</p>
-<p>and by the commutation property, this extends to norms:</p>
-<p>\begin{equation}<br>
-| \nabla (P_t f)(x) | \leq e^{-t} P_t(| \nabla f |)(x)<br>
-\end{equation}</p>
-<p>Returning to the standard Gaussian measure $\gamma$ on $ \mathbb{R}^n $, we define the variance:</p>
-<p>\begin{equation}<br>
-\text{Var}_{\gamma}(f) \triangleq \int f^2 \, d\gamma - \left( \int f \, d\gamma \right)^2<br>
-\end{equation}</p>
-<p>The key ideas used in the proof (top of p.5 in the notes) are:</p>
-<ul>
-<li>The ability to commute $\nabla$ and $P_t$, as shown above.</li>
-<li>The invariance of $\gamma$ under the semigroup $ (P_t)_{t \geq 0} $.</li>
-</ul>
-<p>So we prove: <strong>energy bounds variance</strong>. A famous inequality (Poincaré) now<br>
-has both analytic and physical meaning.</p>
-<p>Even more astounding: from this, a cascade of seemingly unrelated inequalities<br>
-and information-theoretic identities emerge. Among them:</p>
-<ol>
-<li><strong>Logarithmic Sobolev inequality</strong>, which controls entropy:</li>
-</ol>
-<p>\begin{equation}<br>
-\text{Ent}_{\gamma}(f) \leq \frac{1}{2} \int \frac{| \nabla f |^2}{f} \, d\gamma<br>
-\end{equation}</p>
-<ol>
-<li><strong>Talagrand inequality</strong>, which bounds Wasserstein-2 distance in terms of<br>
-    the Kullback–Leibler divergence:</li>
-</ol>
-<p>\begin{equation}<br>
-W_2(\mu, \gamma)^2 \leq 2 \cdot H(\mu \Vert \gamma)<br>
-\end{equation}</p>
-<p>We also encountered critical identities:</p>
-<ul>
-<li><strong>Fisher information</strong>:</li>
-</ul>
-<p>\begin{equation}<br>
-I_{\gamma}(f) \triangleq \int \frac{| \nabla f |^2}{f} \, d\gamma<br>
-\end{equation}</p>
-<ul>
-<li><strong>De Bruijn identity</strong>, relating the rate of entropy dissipation to Fisher information:</li>
-</ul>
-<p>\begin{equation}<br>
-\frac{d}{dt} \mathbb{E}[f_t] = - I_{\gamma}(P_t f)<br>
-\end{equation}</p>
-<h2 id="looking-ahead">Looking ahead</h2>
-<p>We only proved the Poincaré inequality today, but the groundwork is<br>
-laid for exploring Langevin–Smoluchowski dynamics, which apply these<br>
-ideas to problems like sampling in high-dimensional spaces. Future<br>
-lectures promise to deepen our understanding of these connections.</p>
-<blockquote>
-<p>A good proof should teach you something.<br>
-—Ioannis Karatzas</p>
-</blockquote>
-<p>Yesterday, we learned not just a proof, but another way of seeing<br>
-mathematics as a beautiful, interconnected system. I invite readers to<br>
-explore the notes and share their thoughts on these elegant<br>
-inequalities.</p>                    </article>
-                </aside><!-- /#featured -->
+<p>The scientist does not study nature because it is useful to do so. He studies it because he takes pleasure in it, and he takes pleasure in it because it is beautiful. If nature were not beautiful it would not be worth knowing, and life would not be worth living …</p></blockquote>
+                        <a class="readmore" href="../inequalities.html">read more</a>
+                    </div><!-- /.entry-content -->
+                </article></li>
+                    </ol><!-- /#posts-list -->
+                    </section><!-- /#content -->
                 <section id="extras" class="body">
                 </section><!-- /#extras -->
 
