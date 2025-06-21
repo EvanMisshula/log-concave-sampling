@@ -51,14 +51,22 @@
 </footer><!-- /.post-info --><p><img src="/log-concave-sampling/images/irrev_MC.png" width="600px" alt="officeHRs" title="respect"></p>
 
 <h1 id="introduction">Introduction</h1>
-<p>In stochastic processes, particularly for Brownian motion and<br>
-diffusions, the <strong>strong Markov property</strong> (SMP) plays a critical<br>
-role. While the forward process may satisfy the SMP, the time-reversed<br>
-process often fails to do so. This document explains why—even for a<br>
-diffusion *without drift*—time reversal may preserve the Markov<br>
-property but not the strong Markov property.</p>
-<p>We aim to give not just formal definitions, but the <strong>moral<br>
-justification</strong> behind this failure.</p>
+<p>In stochastic processes, particularly for Brownian motion and diffusions, the <em>strong Markov property</em> (SMP) plays a critical role. While the forward process may satisfy the SMP, the time-reversed process often fails to do so. This document explains why—even for a diffusion <em>without drift</em>—time reversal may preserve the Markov property but not the strong Markov property.</p>
+<p>We aim to give not just formal definitions, but the moral <em>intuition</em> behind this failure.</p>
+<ul>
+<li>Acknowledgments<br>
+We are deeply grateful to <em>Dr. Ioannis Karatzas</em> for his clear and elegant exposition on the time reversal of diffusions and the subtle points at which classical properties fail. His presentation illuminated not only the technical distinctions but also the conceptual elegance of the topic.</li>
+</ul>
+<p>The foundational contributions of Étienne Pardoux and David Haussmann in formulating and analyzing time-reversed diffusions provided the essential structure for much of the modern theory. In parallel, <em>Paul-André Meyer&rsquo;s</em> incisive observations reduced many of these complexities to what now reads almost as a triviality—without ever losing the depth of the insight. His work stands as a model of mathematical clarity and economy.</p>
+<p>Dr. Karatzas&rsquo; notes on time reversal and the paper by Meyer are now<br>
+available on our ~Ambition~ page. The full talk which will play on <br>
+YouTube is background page. In the spirit of Leslie Lamport, who<br>
+said</p>
+<blockquote>
+<p>If you are thinking without writing, you only think you&rsquo;re<br>
+thinking.</p>
+</blockquote>
+<p>what follows is my rendintion of the moral imperative. </p>
 <h1 id="forward-vs-reverse-time-and-stopping-times">Forward vs. Reverse Time and Stopping Times</h1>
 <h2 id="forward-time-what-is-a-stopping-time">Forward Time: What Is a Stopping Time?</h2>
 <p>Let $ X_t $ be a Brownian motion adapted to the filtration $<br>
@@ -88,12 +96,9 @@ future.</p>
 Y_t = X_{T - t}<br>
 $$</p>
 <p>This is the time-reversed process. The reversed filtration is:</p>
-<p>\[<br>
-\mathcal{G}<sub>t</sub> = &sigma;(Y<sub>s</sub> : 0 &le; s &le; t) = &sigma;(X<sub>T - s</sub></p>
-<div class="codehilite"><pre><span></span><code><span class="mf">0</span><span class="w"> </span><span class="err">\</span><span class="n">le</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="err">\</span><span class="n">le</span><span class="w"> </span><span class="n">t</span><span class="p">)</span>
-</code></pre></div>
-
-<p>\]</p>
+<p>$$<br>
+\mathcal{G}<em - T s>t = \sigma(Y_s : 0 \le s \le t) = \sigma(X</em>: 0 \le s \le t)<br>
+$$</p>
 <h2 id="what-happens-to-the-stopping-time">What Happens to the Stopping Time?</h2>
 <p>Suppose we take $ \tau = \inf { t \ge 0 : X_t = 1 } $</p>
 <p>Then in reversed time, the corresponding point is:</p>
@@ -114,7 +119,7 @@ after $ s $). Therefore:</p>
 <blockquote>
 <p>In forward time: &ldquo;Stop the <strong>first time</strong> something happens&rdquo;<br>
 $\leftarrow$ valid stopping time In reversed time: &ldquo;Stop the<br>
-<strong>last &gt; time</strong> something happens&rdquo; $\leftarrow$ depends on the<br>
+<strong>last time</strong> something happens&rdquo; $\leftarrow$ depends on the<br>
 future</p>
 </blockquote>
 <p>That is why the strong Markov property breaks:<br>
