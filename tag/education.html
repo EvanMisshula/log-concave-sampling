@@ -37,7 +37,130 @@
 
                 <aside id="featured" class="body">
                     <article>
-                        <h1 class="entry-title"><a href="../lean4.html">Now?</a></h1>
+                        <h1 class="entry-title"><a href="../telegraph.html">Telegraph</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2025-07-28T00:00:00-04:00">
+                Published: Mon 28 July 2025
+        </abbr>
+
+                <address class="vcard author">
+                        By                                 <a class="url fn" href="../author/emisshula.html">emisshula</a>
+                </address>
+        <p>In <a href="../category/optimal-transport.html">optimal transport</a>.</p>
+<p>tags: <a href="../tag/education.html">education</a> <a href="../tag/mc.html">mc</a> </p>        
+</footer><!-- /.post-info --><p><img src="/log-concave-sampling/images/bwcookie.jpg" width="600px" alt="officeHRs" title="respect"></p>
+
+<h1 id="introduction">Introduction</h1>
+<p>As Leo Bao beautifully presented, from random velocity flips we arrive<br>
+at a wave equation. I want to open with a quote that reminds us that<br>
+mathematics, like art, seeks the essential. The Chinese say:</p>
+<blockquote>
+<p>“咬文嚼字，不如得其神髓。”</p>
+<p>``Rather than chew over every word, better to grasp the spirit.&rsquo;&lsquo;</p>
+</blockquote>
+<p>Leo did a beautiful job and I implore you to take the long pleasure of<br>
+reading his excellent notes which are are available on our<br>
+<code>background</code> page. I will try my level best to give you the highlights<br>
+of what Leo did in depth and with grace.</p>
+<h1 id="first-recall-the-telegraphers-equation-itself">First recall the telegrapher&rsquo;s equation itself</h1>
+<p>\begin{align<em>}<br>
+\partial_{tt} u(t,x) + 2 a \partial_{t} u(t,x) &amp; = c \partial_{xx} u(t,x) \<br>
+u(0, x) &amp; = f_{0}(x) \<br>
+\partial_{t} u(0, x) &amp; = 0<br>
+\end{align</em>}</p>
+<p>Leo then explains the relevance of the Hilbert Space metrics,<br>
+probability space spaces with finite second moments, the Wasserstien-2<br>
+metric and the transport plan itself. Further, Leo introduces us to<br>
+$AC^2(I;\mathbb{P}_2(\mathbb{R}^d))$ the space of absolutely<br>
+continuous curves on an interval. Formally:</p>
+<p>$$<br>
+AC^2(I;\mathbb{P}<em t>2(\mathbb{R}^d)) = {\mu</em>}:I \rightarrow  \mathbb{P<em 2>2(\mathbb{R}^d): \exists m \in L^2(I) \text{ with } \mathcal{W}</em> \mu(r) dr }}(\mu_{s}, \mu_{t}) \leq \int_{s}^{t<br>
+$$</p>
+<p>showing that both the velocity and conditional velocity field of the<br>
+transport plan is a central insight of the paper. This firmly roots<br>
+the paper in our reading groups focus on both optimal transport and<br>
+sampling. Leo then reviews the notions of weak convergence before<br>
+demonstrating the explosion of the transport plan velocity in<br>
+diffusions.  Leo follows the notation the paper our time runs from $0<br>
+\rightarrow 1$ instead of the more standard $0 \rightarrow T$.</p>
+<h1 id="kac-flow-in-1d">Kac Flow in 1D</h1>
+<p>The next section begins with the careful construction of Kac Flow in 1D.<br>
+He first starts the process at $0$ then generalizes to $X_{0}$. Leo<br>
+then introduces the idea of <em>weak differentiability</em> intruduced Sergei<br>
+Sobolev in the 1930&rsquo;s and refined by Laurent Schwartz which I am sure<br>
+will continue to be useful in the the study of Generative Processes<br>
+which rely on time evolution to an invariant distribution and the<br>
+reversal of such a process to generate new samples.</p>
+<p>Leo states the explicit solution of the Telegrapher&rsquo;s equation and<br>
+and a weak distribution functions. This once again highlights the<br>
+profound conection between measurable functions and probability<br>
+distributions which we seem to discover again.</p>
+<h1 id="kac-flow-starting-at-delta_0">Kac Flow starting at $\delta_{0}$</h1>
+<p>Leo then shows a solution of the Kac Flow starting at a point<br>
+process. Pushing forward, Leo show us how to solver in 1D for the<br>
+velocity field of a 1D-Kac process.</p>
+<p>$$<br>
+v(t,x) = \frac{x}{t + \frac{r_{t}(x)}{c} \frac{I_{0} \beta r_{t} (x)} {I&rsquo;<em t>{0} \beta r</em>} (x)}<br>
+$$</p>
+<h1 id="extending-kac-flow-to-mathbbrd">Extending Kac Flow to \mathbb{R}<sup>d</sup></h1>
+<p>Leo methodically use independence arguments to extend the Kac Flow<br>
+from one dimension to $mathbb{R}^d$ before showing the diffusion<br>
+and Telegraher&rsquo;s solutions actually converges. However, the Kac<br>
+has some notable advantages such as having an admissable<br>
+transport plan where $(\mathbb{P}<em t>{X</em>)}<em 2>{t \geq 0}$ is<br>
+Lipschitz continuous in $\mathbb{P}</em>^d)$ with}(\mathbb{R<br>
+constant $d^{\frac{1}{2}} c $. After which, Leo generalizes<br>
+the Kac insertion method into $\arrow{k}$.</p>
+<h1 id="this-allows-us-to-consider-the-conditional-velocity-field-of-the-multi-d-wasserstein-flow">This allows us to consider the (Conditional) Velocity Field of the Multi-d Wasserstein Flow</h1>
+<p>Here he shows us that in fact</p>
+<p>$$<br>
+\mu_{t}(x) = - \sum_{i=1}^{d} \partial{x^{i}}(\mu_{t}(x) v_{t}^{i}(x^{i})) = - \nabla \cdot (\mu_{t}(x) v_{t}(x)). <br>
+$$</p>
+<p>In fact, once again showing the deep connection between the solutions<br>
+of PDE&rsquo;s and probaility:</p>
+<p>$$<br>
+ v_{t}^{i}(x^{i}| x_{0}^{i}) = \mathbb{E}[\dot{X}(t) | X_{t}^{i} = x^{i}, X_{0}^{i} = x_{{0}^{i}}]<br>
+$$</p>
+<h1 id="finally-he-shows-us-we-have-what-we-need-to-define-the-loss-function">Finally he shows us we have what we need to define the loss function</h1>
+<p>Yes, it may have been bothering you that we don&rsquo;t have access to $v(t, x)$.  However,<br>
+the Corrallary 15&rsquo;s Equation 39 shows us that the conditional vector field is all we<br>
+need to find the velocity field:</p>
+<p>$$<br>
+v_{t}(x) := \frac{1}{u_{t}(x)} \int u_{t}(x | x_{0}) v_{t}(x | x_{0}) f_{0} (x_{0}) dx_{0}<br>
+$$</p>
+<p>Now you can create a loss function which any Neural Network can<br>
+estimate the parameters for (or as our friends in CS say, ``it can<br>
+learn the velocity field&rsquo;&lsquo;. )</p>
+<p>$$<br>
+\mathbb{CFM} (\theta) = \mathbb{\E}<em 0>{t ~ \mathcal{U}(0,T), x</em>) |^2 \right] }~\mu_{0}, x ~ u_{t}(\cdot | x_{0})} \left[ |v^{\theta}(t,x) - v(t,x | x_{0<br>
+$$</p>
+<p>The work presented by Leo Bao highlights the deep connections between<br>
+optimal transport, sampling, and partial differential equations. By<br>
+deriving the telegrapher&rsquo;s equation and exploring its properties, we<br>
+gain insight into the behavior of stochastic processes and the<br>
+underlying transport plans. The development of the Kac flow and its<br>
+extension to higher dimensions provides a powerful tool for<br>
+understanding the dynamics of these processes. Ultimately, this work<br>
+enables us to define a loss function that can be used to estimate the<br>
+velocity field, which is a crucial component in various applications,<br>
+including generative modeling and sampling. By bridging the gap<br>
+between optimal transport, PDEs, and machine learning, this research<br>
+has the potential to drive advances in fields such as AI, statistics,<br>
+and data science.</p>
+<p>Brilliant!</p>                    </article>
+                </aside><!-- /#featured -->
+                    <section id="content" class="body">
+                        <h1>Other articles</h1>
+                        <hr />
+                        <ol id="posts-list" class="hfeed">
+
+                <li><article class="hentry">
+                    <header>
+                        <h1><a href="../lean4.html" rel="bookmark"
+                               title="Permalink to Now?">Now?</a></h1>
+                    </header>
+
+                    <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2025-07-04T00:00:00-04:00">
                 Published: Fri 04 July 2025
@@ -48,7 +171,7 @@
                 </address>
         <p>In <a href="../category/optimal-transport.html">optimal transport</a>.</p>
 <p>tags: <a href="../tag/education.html">education</a> <a href="../tag/mc.html">mc</a> </p>        
-</footer><!-- /.post-info --><p><img src="/log-concave-sampling/images/joined.png" width="600px" alt="officeHRs" title="respect"></p>
+</footer><!-- /.post-info -->                        <p><img src="/log-concave-sampling/images/joined.png" width="600px" alt="officeHRs" title="respect"></p>
 
 <h1 id="introduction">Introduction</h1>
 <p>Last Wednesday, I gave a lecture on the formal proof assistant <strong>Lean<br>
@@ -56,64 +179,10 @@
 represents the largest body of rigorously verified mathematics<br>
 online. Yet major areas of our field remain entirely missing —<br>
 including <strong>Stochastic Integration</strong>, <strong>Optimal Stopping</strong>, <strong>Diffusion<br>
-Processes</strong>, and <strong>Optimal Control</strong>.</p>
-<p>While the recording didn’t work (again — Zoom issues), the<br>
-presentation slides are available on our <code>background</code> page. I’m proud<br>
-of the work, but I also believe that <strong>Alex Kontorovich</strong> makes a deeper<br>
-and more historically grounded argument in his recent lectures —<br>
-especially for researchers and graduate students.</p>
-<p>In <a href="https://www.youtube.com/watch?v=RldTMq1cOFw">this lecture</a>, Kontorovich traces how our standards of mathematical<br>
-proof have evolved. Between 1800 and 1900, he explains, the culture of<br>
-rigor was transformed by figures like <strong>Cauchy</strong> and <strong>Fourier</strong>. Rigor<br>
-didn’t always mean epsilon-delta proofs — that language had to be<br>
-<strong>invented</strong>.</p>
-<p>Then he draws a striking analogy to Donald Knuth’s invention of <a href="https://www-cs-faculty.stanford.edu/~knuth/tex.html">\TeX</a><br>
-in the 1970s. Knuth created \TeX not for the world, but to typeset his<br>
-own mathematical papers — which had previously been handed off (often<br>
-handwritten) to a secretary or typist. Over time — thanks to<br>
-researchers like <strong>Leslie Lamport</strong> and others who built macros and<br>
-tooling on top of TeX — it became not only usable, but <strong>easier and<br>
-cheaper</strong> than the old system. This tipping point in usability is<br>
-sometimes called the <strong>Knuth factor</strong>.</p>
-<p>Kontorovich then brings up another powerful figure: <strong>Nico de<br>
-Bruijn</strong>. In the 1960s, de Bruijn pioneered mechanical proof checking<br>
-with his <strong><em>*Automath</em></strong><em> system — the earliest prototype of what we now<br>
-call proof assistants. His vision was that mathematical rigor should<br>
-be so tight, so precise, that it could be verified by a computer. The<br>
-obstacle? The </em><em>de Bruijn factor</em>* — the effort required to write a<br>
-machine-verifiable proof relative to the informal version — was still</p>
-<blockquote>
-<ol>
-<li>In other words, it was harder, longer, and less readable than the<br>
-handwritten alternative.</li>
-</ol>
-</blockquote>
-<p>But this is changing.</p>
-<p>Kontorovich<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup> suggests that modern systems like<br>
-<strong>Lean 4</strong> are finally bringing the de Bruijn factor closer to 1 — and<br>
-that once it dips below 1, we may reach a new cultural tipping point,<br>
-just as \TeX did decades ago. When formalization becomes easier than<br>
-informal proof — not for every problem, but for <strong>enough</strong> of them —<br>
-that’s when everything changes.</p>
-<p>My talk made a slightly different, but related argument: that the Lean<br>
-4 community is quietly building a kind of <strong>GitHub for mathematics</strong> — a<br>
-shared, public, incrementally constructed repository of rigor. Yes,<br>
-the <a href="https://leanprover.zulipchat.com/">Lean Zulip chat</a> has only about 11,000 members today, and <a href="https://github.com/leanprover-community/mathlib4">mathlib4</a><br>
-has just over 550 contributors. But GitHub also started small. It was<br>
-once a niche project used by coders — and by 1018, it was big enough<br>
-to be aquired for \$7.5 billion.  Today, the platform is powering over<br>
-150 million developers. Formal math might follow a similar arc.</p>
-<p>I argue Lean 4 isn&rsquo;t &ldquo;easier&rdquo; yet. But the question is no longer <strong>if</strong><br>
-it will be — only <strong>when</strong>.</p>
-<h1 id="footnotes">Footnotes</h1>
-<p><sup><a id="fn.1" href="#fnr.1">1</a></sup> In his second lecture at the Lean4 conference in January 2025, he<br>
-speaks about his work to formalize Complex Analysis in Lean4 and<br>
-revisits some of the same themes. (<a href="https://www.youtube.com/watch?v=ubv1Qmy1UT0">https://www.youtube.com/watch?v=ubv1Qmy1UT0</a>)</p>                    </article>
-                </aside><!-- /#featured -->
-                    <section id="content" class="body">
-                        <h1>Other articles</h1>
-                        <hr />
-                        <ol id="posts-list" class="hfeed">
+Processes …</strong></p>
+                        <a class="readmore" href="../lean4.html">read more</a>
+                    </div><!-- /.entry-content -->
+                </article></li>
 
                 <li><article class="hentry">
                     <header>
