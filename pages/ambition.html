@@ -8,11 +8,12 @@
 			  window.MathJax = {
 				      tex: {
 					  inlineMath: [['$', '$'], ['\\(', '\\)']],
-					  displayMath: [['$$', '$$'], ['\\[', '\\]']]
+					  displayMath: [['$$', '$$'], ['\\[', '\\]']],
+					  packages: {'[+]': ['ams']
 				      },
 				      options: {
 					  skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-					  processHtmlClass: '.*'
+					  processHtmlClass: 'mathjax'
 				      }
 				  };
 			</script>
