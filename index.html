@@ -80,9 +80,13 @@ metric and the transport plan itself. Further, Leo introduces us to<br>
 $AC^2(I;\mathbb{P}_2(\mathbb{R}^d))$ the space of absolutely<br>
 continuous curves on an interval. Formally:</p>
 <div class="mathjax">
-$$
-AC^2(I;\mathbb{P}_2(\mathbb{R}^d)) = \{\mu_{t}:I \rightarrow  \mathbb{P}_2(\mathbb{R}^d): \exists m \in L^2(I) \text{ with } \mathcal{W}_{2}(\mu_{s}, \mu_{t}) \leq \int_{s}^{t} \mu(r) dr \}
-$$
+\[
+AC^2\left(I;\mathbb{P}_2(\mathbb{R}^d)\right) =
+\left\{ \mu_t : I \rightarrow \mathbb{P}_2(\mathbb{R}^d) \,\middle|\, 
+\exists m \in L^2(I) \text{ such that } 
+\mathcal{W}_2(\mu_s, \mu_t) \leq \int_s^t m(r) \, dr
+\right\}
+\]
 </div>
 
 <p>showing that both the velocity and conditional velocity field of the<br>
@@ -110,7 +114,7 @@ process. Pushing forward, Leo show us how to solver in 1D for the<br>
 velocity field of a 1D-Kac process.</p>
 <div class="mathjax">
 $$
-v(t,x) = \frac{x}{t + \frac{r_{t}(x)}{c} \frac{I_{0} \beta r_{t} (x)} {I'_{0} \beta r_{t} (x)}}
+v(t,x) = \frac{x}{t + \left( \frac{r_{t}(x)}{c} \cdot \frac{I_{0}(\beta r_{t}(x))}{I'_{0}(\beta r_{t}(x))} \right)}
 $$
 </div>
 
@@ -127,7 +131,7 @@ the Kac insertion method into $\arrow{k}$.</p>
 <p>Here he shows us that in fact</p>
 <div class="mathjax">
 $$
-\mu_{t}(x) = - \sum_{i=1}^{d} \partial{x^{i}}(\mu_{t}(x) v_{t}^{i}(x^{i})) = - \nabla \cdot (\mu_{t}(x) v_{t}(x)). 
+\mu_{t}(x) = - \sum_{i=1}^{d} \partial_{x^{i}}\left( \mu_{t}(x) v_{t}^{i}(x^{i}) \right) = - \nabla \cdot \left( \mu_{t}(x) v_{t}(x) \right)
 $$
 </div>
 
@@ -135,7 +139,7 @@ $$
 of PDE&rsquo;s and probaility:</p>
 <div class="mathjax">
 $$
- v_{t}^{i}(x^{i}| x_{0}^{i}) = \mathbb{E}[\dot{X}(t) | X_{t}^{i} = x^{i}, X_{0}^{i} = x_{{0}^{i}}]
+v_{t}^{i}(x^{i} \mid x_{0}^{i}) = \mathbb{E}[\dot{X}(t) \mid X_{t}^{i} = x^{i},\, X_{0}^{i} = x_{0}^{i}]
 $$
 </div>
 
@@ -145,7 +149,7 @@ the Corrallary 15&rsquo;s Equation 39 shows us that the conditional vector field
 need to find the velocity field:</p>
 <div class="mathjax">
 $$
-v_{t}(x) := \frac{1}{u_{t}(x)} \int u_{t}(x | x_{0}) v_{t}(x | x_{0}) f_{0} (x_{0}) dx_{0}
+v_{t}(x) := \frac{1}{u_{t}(x)} \int u_{t}(x \mid x_{0})\, v_{t}(x \mid x_{0})\, f_{0}(x_{0})\, dx_{0}
 $$
 </div>
 
@@ -154,7 +158,7 @@ estimate the parameters for (or as our friends in CS say, ``it can<br>
 learn the velocity field&rsquo;&lsquo;. )</p>
 <div class="mathjax">
 $$
-\mathbb{CFM} (\theta) = \mathbb{\E}_{t ~ \mathcal{U}(0,T), x_{0}~\mu_{0}, x ~ u_{t}(\cdot | x_{0})} \left[ \|v^{\theta}(t,x) - v(t,x | x_{0}) \|^2 \right] 
+\mathbb{E}_{t \sim \mathcal{U}(0,T),\, x_0 \sim \mu_0,\, x \sim u_t(\cdot \mid x_0)} \left[ \left\| v^{\theta}(t, x) - v(t, x \mid x_0) \right\|^2 \right]
 $$
 </div>
 
