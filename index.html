@@ -38,7 +38,124 @@
 
                 <aside id="featured" class="body">
                     <article>
-                        <h1 class="entry-title"><a href="./telegraph.html">Telegraph</a></h1>
+                        <h1 class="entry-title"><a href="./transport.html">Score and Flow</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2025-08-03T00:00:00-04:00">
+                Published: Sun 03 August 2025
+        </abbr>
+
+                <address class="vcard author">
+                        By                                 <a class="url fn" href="./author/emisshula.html">emisshula</a>
+                </address>
+        <p>In <a href="./category/optimal-transport.html">optimal transport</a>.</p>
+<p>tags: <a href="./tag/education.html">education</a> <a href="./tag/mc.html">mc</a> </p>        
+</footer><!-- /.post-info --><p><img src="/log-concave-sampling/images/toblerone.jpg" width="600px" alt="officeHRs" title="respect"></p>
+
+<p><a id="orgb93b821"></a></p>
+<h1 id="introduction">Introduction</h1>
+<p>Chenyang gave a beautiful presentation on Flow vs Score Matching in<br>
+the context of image generation. His notes and the notes from the MIT<br>
+Course he based them on are on our background page. Even more<br>
+delightlfuly, his presentation was recorded and he restricted himself<br>
+to the amount of the board visible in the room. Inspired no doubt by<br>
+our professor, he left two exercises for us. What follows is my<br>
+patriotic attempt to answer the first.</p>
+<p>Given a flow-induced transport plan between $p_0$ and $p^ *$,<br>
+determining its optimality (in either Monge or Kantorovich sense)<br>
+hinges on several factors. Let&rsquo;s examine when such a plan can be<br>
+defended as optimal, when it might not be, and under what conditions<br>
+it could be far from optimal.</p>
+<p><a id="orgb242122"></a></p>
+<h1 id="when-can-it-be-optimal">When Can It Be Optimal?</h1>
+<p>:PROPERTIES:<br>
+:CUSTOM<sub>ID</sub>: when-can-it-be-optimal<br>
+:END:. </p>
+<h2 id="quadratic-cost-and-breniers-theorem">Quadratic Cost and Brenier’s Theorem</h2>
+<p>For the cost $c(x, y) = \frac{1}{2} |x - y|^2$, the Monge problem<br>
+is solved by a gradient of a convex function $T = \nabla \varphi$<br>
+if:</p>
+<ul>
+<li>$p_0$ is absolutely continuous,</li>
+<li>$p^* \in \mathcal{P}_2(\mathbb{R}^d)$,</li>
+<li>The transport map is deterministic and invertible almost everywhere.</li>
+</ul>
+<p>If the ODE flow induces such a map $T$ from $p_0$ to $p^*$, with<br>
+$T = \nabla \varphi$ for some convex $\varphi$, then it is optimal<br>
+in both Monge and Kantorovich senses for quadratic cost.</p>
+<p><a id="orgcb31451"></a></p>
+<h1 id="when-is-it-not-optimal">When Is It Not Optimal?</h1>
+<p>In general, if:</p>
+<ul>
+<li>The flow $X_t$ is not a gradient flow,</li>
+<li>Or the velocity field $u_t$ is not the gradient of a convex<br>
+    potential,</li>
+</ul>
+<p>then there is no reason to expect that the plan is optimal for any<br>
+cost function — especially not for quadratic cost.</p>
+<p><a id="org3fe97a7"></a></p>
+<h1 id="is-it-close-to-optimal">Is It Close to Optimal?</h1>
+<p>Even when the flow is not optimal, it may still be approximately<br>
+optimal if:</p>
+<ul>
+<li>$p_0$ and $p^*$ are close in Wasserstein distance (e.g., small<br>
+    variance),</li>
+<li>The velocity field $u_t$ stays close to a gradient field,</li>
+<li>The mismatch between the induced displacement $T(x) = X_1(x)$ and<br>
+    the optimal map $T^*(x)$ is small in $L^2(p_0)$.</li>
+</ul>
+<p><a id="orgf759b57"></a></p>
+<h1 id="when-would-it-be-far-from-optimal">When Would It Be Far From Optimal?</h1>
+<p>This is where it gets most interesting:</p>
+<ol>
+<li>Mismatched Geometry: If $u_t$ does not respect the optimal<br>
+    transport geometry — for example, if it contains rotational or<br>
+    divergence-free components that cannot be captured by a Monge map.</li>
+<li>Multimodal targets: If $p^*$ is multimodal and $u_t$ tries to<br>
+    mix mass across modes without respecting convexity, it will be far<br>
+    from the optimal plan.</li>
+<li>High-entropy interpolation: If the intermediate distributions<br>
+    $p_t$ are high entropy (e.g., due to injected noise), then the<br>
+    flow might prioritize entropy regularization over transport cost<br>
+    minimization — leading to Schrödinger-type transport, not<br>
+    Monge-optimal transport.</li>
+</ol>
+<p><a id="orgbaa11f3"></a></p>
+<h1 id="answer-witn-minimal-poetry">Answer witn minimal poetry</h1>
+<p><strong>*“Does the flow induced by the ODE yield an optimal transport plan<br>
+between $p_0$ and \(p^</strong>\)?”**</p>
+<p><a id="org0ef5058"></a></p>
+<h3 id="sometimes-yes-if">Sometimes yes, if:</h3>
+<ul>
+<li>The flow map $X_1(x)$ is the gradient of a convex function.</li>
+<li>$p_0$ is absolutely continuous.</li>
+<li>You&rsquo;re using quadratic cost.</li>
+</ul>
+<p><a id="org2aac553"></a></p>
+<h3 id="often-not-unless">Often not, unless:</h3>
+<ul>
+<li>The velocity field $u_t$ is carefully constructed.</li>
+<li>You&rsquo;re in special cases like Gaussian $p_0, p^*$ or linear score<br>
+    models.</li>
+</ul>
+<p><a id="orgc79e239"></a></p>
+<h3 id="but-it-can-be-close-especially">But it can be close, especially:</h3>
+<ul>
+<li>When interpolations are near-Wasserstein geodesics.</li>
+<li>In small-noise limits of Schrödinger bridge or score-based models.</li>
+</ul>                    </article>
+                </aside><!-- /#featured -->
+                    <section id="content" class="body">
+                        <h1>Other articles</h1>
+                        <hr />
+                        <ol id="posts-list" class="hfeed">
+
+                <li><article class="hentry">
+                    <header>
+                        <h1><a href="./telegraph.html" rel="bookmark"
+                               title="Permalink to Telegraph">Telegraph</a></h1>
+                    </header>
+
+                    <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2025-07-28T00:00:00-04:00">
                 Published: Mon 28 July 2025
@@ -49,7 +166,7 @@
                 </address>
         <p>In <a href="./category/optimal-transport.html">optimal transport</a>.</p>
 <p>tags: <a href="./tag/education.html">education</a> <a href="./tag/mc.html">mc</a> </p>        
-</footer><!-- /.post-info --><p><img src="/log-concave-sampling/images/bwcookie.jpg" width="600px" alt="officeHRs" title="respect"></p>
+</footer><!-- /.post-info -->                        <p><img src="/log-concave-sampling/images/bwcookie.jpg" width="600px" alt="officeHRs" title="respect"></p>
 
 <h1 id="introduction">Introduction</h1>
 <p>As Leo Bao beautifully presented, from random velocity flips we arrive<br>
@@ -57,130 +174,10 @@ at a wave equation. I want to open with a quote that reminds us that<br>
 mathematics, like art, seeks the essential. The Chinese say:</p>
 <blockquote>
 <p>“咬文嚼字，不如得其神髓。”</p>
-<p>``Rather than chew over every word, better to grasp the spirit.&rsquo;&lsquo;</p>
-</blockquote>
-<p>Leo did a beautiful job and I implore you to take the long pleasure of<br>
-reading his excellent notes which are are available on our<br>
-<code>background</code> page. I will try my level best to give you the highlights<br>
-of what Leo did in depth and with grace.</p>
-<h1 id="first-recall-the-telegraphers-equation-itself">First recall the telegrapher&rsquo;s equation itself</h1>
-<div class="mathjax">
-$$
-\begin{aligned}
-\partial_{tt} u(t,x) + 2 a \partial_{t} u(t,x) &= c \partial_{xx} u(t,x) \\
-u(0, x) &= f_{0}(x) \\
-\partial_{t} u(0, x) &= 0 \\
-\end{aligned}
-$$
-</div>
-
-<p>Leo then explains the relevance of the Hilbert Space metrics,<br>
-probability space spaces with finite second moments, the Wasserstien-2<br>
-metric and the transport plan itself. Further, Leo introduces us to<br>
-$AC^2(I;\mathbb{P}_2(\mathbb{R}^d))$ the space of absolutely<br>
-continuous curves on an interval. Formally:</p>
-<div class="mathjax">
-\[
-AC^2\left(I;\mathbb{P}_2(\mathbb{R}^d)\right) =
-\left\{ \mu_t : I \rightarrow \mathbb{P}_2(\mathbb{R}^d) \,\middle|\, 
-\exists m \in L^2(I) \text{ such that } 
-\mathcal{W}_2(\mu_s, \mu_t) \leq \int_s^t m(r) \, dr
-\right\}
-\]
-</div>
-
-<p>showing that both the velocity and conditional velocity field of the<br>
-transport plan is a central insight of the paper. This firmly roots<br>
-the paper in our reading groups focus on both optimal transport and<br>
-sampling. Leo then reviews the notions of weak convergence before<br>
-demonstrating the explosion of the transport plan velocity in<br>
-diffusions.  Leo follows the notation the paper our time runs from $0<br>
-\rightarrow 1$ instead of the more standard $0 \rightarrow T$.</p>
-<h1 id="kac-flow-in-1d">Kac Flow in 1D</h1>
-<p>The next section begins with the careful construction of Kac Flow in 1D.<br>
-He first starts the process at $0$ then generalizes to $X_{0}$. Leo<br>
-then introduces the idea of <em>weak differentiability</em> intruduced Sergei<br>
-Sobolev in the 1930&rsquo;s and refined by Laurent Schwartz which I am sure<br>
-will continue to be useful in the the study of Generative Processes<br>
-which rely on time evolution to an invariant distribution and the<br>
-reversal of such a process to generate new samples.</p>
-<p>Leo states the explicit solution of the Telegrapher&rsquo;s equation and<br>
-and a weak distribution functions. This once again highlights the<br>
-profound conection between measurable functions and probability<br>
-distributions which we seem to discover again.</p>
-<h1 id="kac-flow-starting-at-delta_0">Kac Flow starting at $\delta_{0}$</h1>
-<p>Leo then shows a solution of the Kac Flow starting at a point<br>
-process. Pushing forward, Leo show us how to solver in 1D for the<br>
-velocity field of a 1D-Kac process.</p>
-<div class="mathjax">
-$$
-v(t,x) = \frac{x}{t + \left( \frac{r_{t}(x)}{c} \cdot \frac{I_{0}(\beta r_{t}(x))}{I'_{0}(\beta r_{t}(x))} \right)}
-$$
-</div>
-
-<h1 id="extending-kac-flow-to-mathbbrd">Extending Kac Flow to \mathbb{R}<sup>d</sup></h1>
-<p>Leo methodically use independence arguments to extend the Kac Flow<br>
-from one dimension to $mathbb{R}^d$ before showing the diffusion<br>
-and Telegraher&rsquo;s solutions actually converges. However, the Kac<br>
-has some notable advantages such as having an admissable<br>
-transport plan where $(\mathbb{P}<em t>{X</em>)}<em 2>{t \geq 0}$ is<br>
-Lipschitz continuous in $\mathbb{P}</em>^d)$ with}(\mathbb{R<br>
-constant $d^{\frac{1}{2}} c $. After which, Leo generalizes<br>
-the Kac insertion method into $\arrow{k}$.</p>
-<h1 id="this-allows-us-to-consider-the-conditional-velocity-field-of-the-multi-d-wasserstein-flow">This allows us to consider the (Conditional) Velocity Field of the Multi-d Wasserstein Flow</h1>
-<p>Here he shows us that in fact</p>
-<div class="mathjax">
-$$
-\mu_{t}(x) = - \sum_{i=1}^{d} \partial_{x^{i}}\left( \mu_{t}(x) v_{t}^{i}(x^{i}) \right) = - \nabla \cdot \left( \mu_{t}(x) v_{t}(x) \right)
-$$
-</div>
-
-<p>In fact, once again showing the deep connection between the solutions<br>
-of PDE&rsquo;s and probaility:</p>
-<div class="mathjax">
-$$
-v_{t}^{i}(x^{i} \mid x_{0}^{i}) = \mathbb{E}[\dot{X}(t) \mid X_{t}^{i} = x^{i},\, X_{0}^{i} = x_{0}^{i}]
-$$
-</div>
-
-<h1 id="finally-he-shows-us-we-have-what-we-need-to-define-the-loss-function">Finally he shows us we have what we need to define the loss function</h1>
-<p>Yes, it may have been bothering you that we don&rsquo;t have access to $v(t, x)$.  However,<br>
-the Corrallary 15&rsquo;s Equation 39 shows us that the conditional vector field is all we<br>
-need to find the velocity field:</p>
-<div class="mathjax">
-$$
-v_{t}(x) := \frac{1}{u_{t}(x)} \int u_{t}(x \mid x_{0})\, v_{t}(x \mid x_{0})\, f_{0}(x_{0})\, dx_{0}
-$$
-</div>
-
-<p>Now you can create a loss function which any Neural Network can<br>
-estimate the parameters for (or as our friends in CS say, ``it can<br>
-learn the velocity field&rsquo;&lsquo;. )</p>
-<div class="mathjax">
-$$
-\mathbb{CFM} (\theta) = \mathbb{E}_{t \sim \mathcal{U}(0,T),\, x_0 \sim \mu_0,\, x \sim u_t(\cdot \mid x_0)} \left[ \left\| v^{\theta}(t, x) - v(t, x \mid x_0) \right\|^2 \right]
-$$
-</div>
-
-<p>The work presented by Leo Bao highlights the deep connections between<br>
-optimal transport, sampling, and partial differential equations. By<br>
-deriving the telegrapher&rsquo;s equation and exploring its properties, we<br>
-gain insight into the behavior of stochastic processes and the<br>
-underlying transport plans. The development of the Kac flow and its<br>
-extension to higher dimensions provides a powerful tool for<br>
-understanding the dynamics of these processes. Ultimately, this work<br>
-enables us to define a loss function that can be used to estimate the<br>
-velocity field, which is a crucial component in various applications,<br>
-including generative modeling and sampling. By bridging the gap<br>
-between optimal transport, PDEs, and machine learning, this research<br>
-has the potential to drive advances in fields such as AI, statistics,<br>
-and data science.</p>
-<p>Brilliant!</p>                    </article>
-                </aside><!-- /#featured -->
-                    <section id="content" class="body">
-                        <h1>Other articles</h1>
-                        <hr />
-                        <ol id="posts-list" class="hfeed">
+<p>``Rather than chew over …</p></blockquote>
+                        <a class="readmore" href="./telegraph.html">read more</a>
+                    </div><!-- /.entry-content -->
+                </article></li>
 
                 <li><article class="hentry">
                     <header>
