@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                        <meta charset="utf-8" />
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                        <meta name="generator" content="Pelican" />
+			<script>
+			  window.MathJax = {
+				      tex: {
+					  inlineMath: [['$', '$'], ['\\(', '\\)']],
+					  displayMath: [['$$', '$$'], ['\\[', '\\]']],
+					  packages: {'[+]': ['ams']
+				      },
+				      options: {
+					  skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+					  processHtmlClass: 'mathjax'
+				      }
+				  };
+			</script>
+			<script id="MathJax-script" async
+				src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+			</script>
+                        <title>Telegraph</title>
+                        <link rel="stylesheet" href="./theme/css/main.css" />
+    <meta name="description" content="Introduction As Leo Bao beautifully presented, from random velocity flips we arrive at a wave equation. I want to open with a quote that reminds..." />
+        </head>
+
+        <body id="index" class="home">
+                <header id="banner" class="body">
+                        <h1><a href="./">log-concave-sampling</a></h1>
+                        <nav><ul>
+                                                <li><a href="./pages/ambition.html">ambition</a></li>
+                                                <li><a href="./pages/background.html">background</a></li>
+                                                <li><a href="./pages/contact.html">contact</a></li>
+                                                <li><a href="./pages/why.html">why?</a></li>
+                                                <li class="active"><a href="./category/optimal-transport.html">optimal transport</a></li>
+                        </ul></nav>
+                </header><!-- /#banner -->
+  <section id="content" class="body">
+    <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="./telegraph.html" rel="bookmark"
+             title="Permalink to Telegraph">Telegraph</a></h1>
+      </header>
+
+      <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2025-07-28T00:00:00-04:00">
+                Published: Mon 28 July 2025
+        </abbr>
+
+                <address class="vcard author">
+                        By                                 <a class="url fn" href="./author/emisshula.html">emisshula</a>
+                </address>
+        <p>In <a href="./category/optimal-transport.html">optimal transport</a>.</p>
+<p>tags: <a href="./tag/education.html">education</a> <a href="./tag/mc.html">mc</a> </p>        
+</footer><!-- /.post-info -->        <p><img src="/log-concave-sampling/images/bwcookie.jpg" width="600px" alt="officeHRs" title="respect"></p>
+
+<h1 id="introduction">Introduction</h1>
+<p>As Leo Bao beautifully presented, from random velocity flips we arrive<br>
+at a wave equation. I want to open with a quote that reminds us that<br>
+mathematics, like art, seeks the essential. The Chinese say:</p>
+<blockquote>
+<p>“咬文嚼字，不如得其神髓。”</p>
+<p>``Rather than chew over every word, better to grasp the spirit.&rsquo;&lsquo;</p>
+</blockquote>
+<p>Leo did a beautiful job and I implore you to take the long pleasure of<br>
+reading his excellent notes which are are available on our<br>
+<code>background</code> page. I will try my level best to give you the highlights<br>
+of what Leo did in depth and with grace.</p>
+<h1 id="first-recall-the-telegraphers-equation-itself">First recall the telegrapher&rsquo;s equation itself</h1>
+<div class="mathjax">
+$$
+\begin{aligned}
+\partial_{tt} u(t,x) + 2 a \partial_{t} u(t,x) &= c \partial_{xx} u(t,x) \\
+u(0, x) &= f_{0}(x) \\
+\partial_{t} u(0, x) &= 0 \\
+\end{aligned}
+$$
+</div>
+
+<p>Leo then explains the relevance of the Hilbert Space metrics,<br>
+probability space spaces with finite second moments, the Wasserstien-2<br>
+metric and the transport plan itself. Further, Leo introduces us to<br>
+<script type="math/tex">AC^2(I;\mathbb{P}_2(\mathbb{R}^d))</script> the space of absolutely<br>
+continuous curves on an interval. Formally:</p>
+<div class="mathjax">
+\[
+AC^2\left(I;\mathbb{P}_2(\mathbb{R}^d)\right) =
+\left\{ \mu_t : I \rightarrow \mathbb{P}_2(\mathbb{R}^d) \,\middle|\, 
+\exists m \in L^2(I) \text{ such that } 
+\mathcal{W}_2(\mu_s, \mu_t) \leq \int_s^t m(r) \, dr
+\right\}
+\]
+</div>
+
+<p>showing that both the velocity and conditional velocity field of the<br>
+transport plan is a central insight of the paper. This firmly roots<br>
+the paper in our reading groups focus on both optimal transport and<br>
+sampling. Leo then reviews the notions of weak convergence before<br>
+demonstrating the explosion of the transport plan velocity in<br>
+diffusions.  Leo follows the notation the paper our time runs from <script type="math/tex">0
+\rightarrow 1</script> instead of the more standard <script type="math/tex">0 \rightarrow T</script>.</p>
+<h1 id="kac-flow-in-1d">Kac Flow in 1D</h1>
+<p>The next section begins with the careful construction of Kac Flow in 1D.<br>
+He first starts the process at <script type="math/tex">0</script> then generalizes to <script type="math/tex">X_{0}</script>. Leo<br>
+then introduces the idea of <em>weak differentiability</em> intruduced Sergei<br>
+Sobolev in the 1930&rsquo;s and refined by Laurent Schwartz which I am sure<br>
+will continue to be useful in the the study of Generative Processes<br>
+which rely on time evolution to an invariant distribution and the<br>
+reversal of such a process to generate new samples.</p>
+<p>Leo states the explicit solution of the Telegrapher&rsquo;s equation and<br>
+and a weak distribution functions. This once again highlights the<br>
+profound conection between measurable functions and probability<br>
+distributions which we seem to discover again.</p>
+<h1 id="kac-flow-starting-at-delta_0">Kac Flow starting at <script type="math/tex">\delta_{0}</script>
+</h1>
+<p>Leo then shows a solution of the Kac Flow starting at a point<br>
+process. Pushing forward, Leo show us how to solver in 1D for the<br>
+velocity field of a 1D-Kac process.</p>
+<div class="mathjax">
+$$
+v(t,x) = \frac{x}{t + \left( \frac{r_{t}(x)}{c} \cdot \frac{I_{0}(\beta r_{t}(x))}{I'_{0}(\beta r_{t}(x))} \right)}
+$$
+</div>
+
+<h1 id="extending-kac-flow-to-mathbbrd">Extending Kac Flow to \mathbb{R}<sup>d</sup></h1>
+<p>Leo methodically use independence arguments to extend the Kac Flow<br>
+from one dimension to <script type="math/tex">mathbb{R}^d</script> before showing the diffusion<br>
+and Telegraher&rsquo;s solutions actually converges. However, the Kac<br>
+has some notable advantages such as having an admissable<br>
+transport plan where <script type="math/tex">(\mathbb{P}_{X_{t}})_{t \geq 0}</script> is<br>
+Lipschitz continuous in <script type="math/tex">\mathbb{P}_{2}(\mathbb{R}^d)</script> with<br>
+constant <script type="math/tex">d^{\frac{1}{2}} c </script>. After which, Leo generalizes<br>
+the Kac insertion method into <script type="math/tex">\arrow{k}</script>.</p>
+<h1 id="this-allows-us-to-consider-the-conditional-velocity-field-of-the-multi-d-wasserstein-flow">This allows us to consider the (Conditional) Velocity Field of the Multi-d Wasserstein Flow</h1>
+<p>Here he shows us that in fact</p>
+<div class="mathjax">
+$$
+\mu_{t}(x) = - \sum_{i=1}^{d} \partial_{x^{i}}\left( \mu_{t}(x) v_{t}^{i}(x^{i}) \right) = - \nabla \cdot \left( \mu_{t}(x) v_{t}(x) \right)
+$$
+</div>
+
+<p>In fact, once again showing the deep connection between the solutions<br>
+of PDE&rsquo;s and probaility:</p>
+<div class="mathjax">
+$$
+v_{t}^{i}(x^{i} \mid x_{0}^{i}) = \mathbb{E}[\dot{X}(t) \mid X_{t}^{i} = x^{i},\, X_{0}^{i} = x_{0}^{i}]
+$$
+</div>
+
+<h1 id="finally-he-shows-us-we-have-what-we-need-to-define-the-loss-function">Finally he shows us we have what we need to define the loss function</h1>
+<p>Yes, it may have been bothering you that we don&rsquo;t have access to <script type="math/tex">v(t, x)</script>.  However,<br>
+the Corrallary 15&rsquo;s Equation 39 shows us that the conditional vector field is all we<br>
+need to find the velocity field:</p>
+<div class="mathjax">
+$$
+v_{t}(x) := \frac{1}{u_{t}(x)} \int u_{t}(x \mid x_{0})\, v_{t}(x \mid x_{0})\, f_{0}(x_{0})\, dx_{0}
+$$
+</div>
+
+<p>Now you can create a loss function which any Neural Network can<br>
+estimate the parameters for (or as our friends in CS say, ``it can<br>
+learn the velocity field&rsquo;&lsquo;. )</p>
+<div class="mathjax">
+$$
+\mathbb{CFM} (\theta) = \mathbb{E}_{t \sim \mathcal{U}(0,T),\, x_0 \sim \mu_0,\, x \sim u_t(\cdot \mid x_0)} \left[ \left\| v^{\theta}(t, x) - v(t, x \mid x_0) \right\|^2 \right]
+$$
+</div>
+
+<p>The work presented by Leo Bao highlights the deep connections between<br>
+optimal transport, sampling, and partial differential equations. By<br>
+deriving the telegrapher&rsquo;s equation and exploring its properties, we<br>
+gain insight into the behavior of stochastic processes and the<br>
+underlying transport plans. The development of the Kac flow and its<br>
+extension to higher dimensions provides a powerful tool for<br>
+understanding the dynamics of these processes. Ultimately, this work<br>
+enables us to define a loss function that can be used to estimate the<br>
+velocity field, which is a crucial component in various applications,<br>
+including generative modeling and sampling. By bridging the gap<br>
+between optimal transport, PDEs, and machine learning, this research<br>
+has the potential to drive advances in fields such as AI, statistics,<br>
+and data science.</p>
+<p>Brilliant!</p>
+      </div><!-- /.entry-content -->
+
+    </article>
+  </section>
+                <section id="extras" class="body">
+                </section><!-- /#extras -->
+
+
+        </body>
+</html>
