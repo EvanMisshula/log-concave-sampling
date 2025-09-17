@@ -38,7 +38,62 @@
 
                 <aside id="featured" class="body">
                     <article>
-                        <h1 class="entry-title"><a href="../transport.html">Score and Flow</a></h1>
+                        <h1 class="entry-title"><a href="../slln.html">Score and Flow</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2025-09-16T00:00:00-04:00">
+                Published: Tue 16 September 2025
+        </abbr>
+
+                <address class="vcard author">
+                        By                                 <a class="url fn" href="../author/emisshula.html">emisshula</a>
+                </address>
+        <p>In <a href="../category/optimal-transport.html">optimal transport</a>.</p>
+<p>tags: <a href="../tag/education.html">education</a> <a href="../tag/mc.html">mc</a> </p>        
+</footer><!-- /.post-info --><p><img src="/log-concave-sampling/images/f2025kickoff.jpg" width="600px" alt="officeHRs" title="respect"></p>
+
+<p><a id="orgb93b821"></a></p>
+<h1 id="introduction">Introduction</h1>
+<p>Today, we were incredibly lucky to have a kickoff not just with new
+results on a fundamental limit in both the strong and weak law of
+large numbers, but also to hear the struggles and aesthetic of this
+mathematical achievement. Seven of the nine students appear in the
+picture.  Leo Bao was calling in from Princeton. A few of the other
+regulars like PJ Kim and Andrii Shypachov had to leave early but
+asked for the notes.</p>
+<p>Dr. Karatzas notes from the talk and the paper previously published appear
+at the top of the background page. Caio Hermano Maia de Oliveira&rsquo;s
+generously contributed his notes which appear immediately underneath
+as TA notes.</p>
+<h1 id="a-note-about-pedogogy">A note about pedogogy</h1>
+<p>Administrators and funders should notice the smiles on students faces
+and realize that this occured after almost four hours of intense
+mathematical exposition.</p>
+<h1 id="summary">Summary</h1>
+<p>Assuming <span class="arithmatex">\(\frac1N\sum_{n=1}^N X_n \to 0\)</span> a.s. for i.i.d. <span class="arithmatex">\(X_n\sim\mu\)</span>:</p>
+<ul>
+<li>From <span class="arithmatex">\(\frac{X_N}{N}=\frac{S_N}{N}-\frac{N-1}{N}\cdot\frac{S_{N-1}}{N-1}\to 0\)</span> a.s., we get <span class="arithmatex">\(\mathbb P(|X|\ge N\ \text{i.o.})=0\)</span>.</li>
+<li>By Borel–Cantelli, <span class="arithmatex">\(\sum_{N\ge1}\mathbb P(|X|\ge N)&lt;\infty\)</span>. The tail integral formula then gives <span class="arithmatex">\(\mathbb E|X|=\int_0^\infty\mathbb P(|X|&gt;t)\,dt&lt;\infty\)</span>, so <span class="arithmatex">\(X\in L^1\)</span>.</li>
+<li>With <span class="arithmatex">\(X\)</span> integrable and i.i.d., the (forward) SLLN says <span class="arithmatex">\(S_N/N\to \mathbb E X\)</span> a.s.; uniqueness of the a.s. limit forces <span class="arithmatex">\(\mathbb E X=0\)</span>.</li>
+</ul>
+<p><strong>Why it matters.</strong></p>
+<ul>
+<li><strong>Sharpness of SLLN assumptions.</strong> It shows the SLLN’s a.s. convergence cannot hold for non-integrable laws; integrability is <em>necessary</em>, not just sufficient, and the limit must equal the true mean.</li>
+<li><strong>Separates regimes by moment strength.</strong> <span class="arithmatex">\(L^1\)</span> is the exact threshold for almost-sure Cesàro convergence; strengthening to <span class="arithmatex">\(L^2\)</span> yields <em>complete convergence</em> (Hsu–Robbins–Erdős). This necessity-to-sufficiency ladder underpins modern refinements (e.g., hereditary/ subsequence forms of complete convergence).&#x20;</li>
+<li><strong>Practical signal about heavy tails.</strong> Distributions with infinite first moment (e.g., Pareto with tail index <span class="arithmatex">\(\alpha\le 1\)</span>) cannot satisfy the SLLN—sample averages won’t stabilize—so modeling and inference must change (truncation, winsorization, stable laws, or medians-of-means).</li>
+</ul>                    </article>
+                </aside><!-- /#featured -->
+                    <section id="content" class="body">
+                        <h1>Other articles</h1>
+                        <hr />
+                        <ol id="posts-list" class="hfeed">
+
+                <li><article class="hentry">
+                    <header>
+                        <h1><a href="../transport.html" rel="bookmark"
+                               title="Permalink to Score and Flow">Score and Flow</a></h1>
+                    </header>
+
+                    <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2025-08-03T00:00:00-04:00">
                 Published: Sun 03 August 2025
@@ -49,7 +104,7 @@
                 </address>
         <p>In <a href="../category/optimal-transport.html">optimal transport</a>.</p>
 <p>tags: <a href="../tag/education.html">education</a> <a href="../tag/mc.html">mc</a> </p>        
-</footer><!-- /.post-info --><p><img src="/log-concave-sampling/images/toblerone.jpg" width="600px" alt="officeHRs" title="respect"></p>
+</footer><!-- /.post-info -->                        <p><img src="/log-concave-sampling/images/toblerone.jpg" width="600px" alt="officeHRs" title="respect"></p>
 
 <p><a id="orgb93b821"></a></p>
 <h1 id="introduction">Introduction</h1>
@@ -57,94 +112,10 @@
 the context of image generation. His notes and the notes from the MIT
 Course he based them on are on our background page. Even more
 delightlfuly, his presentation was recorded and he restricted himself
-to the amount of the board visible in the room. Inspired no doubt by
-our professor, he left two exercises for us. What follows is my
-patriotic attempt to answer the first.</p>
-<p>Given a flow-induced transport plan between <span class="arithmatex">\(p_0\)</span> and <span class="arithmatex">\(p^ *\)</span>,
-determining its optimality (in either Monge or Kantorovich sense)
-hinges on several factors. Let&rsquo;s examine when such a plan can be
-defended as optimal, when it might not be, and under what conditions
-it could be far from optimal.</p>
-<p><a id="orgb242122"></a></p>
-<h1 id="when-can-it-be-optimal">When Can It Be Optimal?</h1>
-<h2 id="quadratic-cost-and-breniers-theorem">Quadratic Cost and Brenier’s Theorem</h2>
-<p>For the cost <span class="arithmatex">\(c(x, y) = \frac{1}{2} \|x - y\|^2\)</span>, the Monge problem
-is solved by a gradient of a convex function <span class="arithmatex">\(T = \nabla \varphi\)</span>
-if:</p>
-<ul>
-<li><span class="arithmatex">\(p_0\)</span> is absolutely continuous,</li>
-<li><span class="arithmatex">\(p^* \in \mathcal{P}_2(\mathbb{R}^d)\)</span>,</li>
-<li>The transport map is deterministic and invertible almost everywhere.</li>
-</ul>
-<p>If the ODE flow induces such a map <span class="arithmatex">\(T\)</span> from <span class="arithmatex">\(p_0\)</span> to <span class="arithmatex">\(p^*\)</span>, with
-<span class="arithmatex">\(T = \nabla \varphi\)</span> for some convex <span class="arithmatex">\(\varphi\)</span>, then it is optimal
-in both Monge and Kantorovich senses for quadratic cost.</p>
-<p><a id="orgcb31451"></a></p>
-<h1 id="when-is-it-not-optimal">When Is It Not Optimal?</h1>
-<p>In general, if:</p>
-<ul>
-<li>The flow <span class="arithmatex">\(X_t\)</span> is not a gradient flow,</li>
-<li>Or the velocity field <span class="arithmatex">\(u_t\)</span> is not the gradient of a convex
-    potential,</li>
-</ul>
-<p>then there is no reason to expect that the plan is optimal for any
-cost function — especially not for quadratic cost.</p>
-<p><a id="org3fe97a7"></a></p>
-<h1 id="is-it-close-to-optimal">Is It Close to Optimal?</h1>
-<p>Even when the flow is not optimal, it may still be approximately
-optimal if:</p>
-<ul>
-<li><span class="arithmatex">\(p_0\)</span> and <span class="arithmatex">\(p^*\)</span> are close in Wasserstein distance (e.g., small
-    variance),</li>
-<li>The velocity field <span class="arithmatex">\(u_t\)</span> stays close to a gradient field,</li>
-<li>The mismatch between the induced displacement <span class="arithmatex">\(T(x) = X_1(x)\)</span> and
-    the optimal map <span class="arithmatex">\(T^*(x)\)</span> is small in <span class="arithmatex">\(L^2(p_0)\)</span>.</li>
-</ul>
-<p><a id="orgf759b57"></a></p>
-<h1 id="when-would-it-be-far-from-optimal">When Would It Be Far From Optimal?</h1>
-<p>This is where it gets most interesting:</p>
-<ol>
-<li>Mismatched Geometry: If <span class="arithmatex">\(u_t\)</span> does not respect the optimal
-    transport geometry — for example, if it contains rotational or
-    divergence-free components that cannot be captured by a Monge map.</li>
-<li>Multimodal targets: If <span class="arithmatex">\(p^*\)</span> is multimodal and <span class="arithmatex">\(u_t\)</span> tries to
-    mix mass across modes without respecting convexity, it will be far
-    from the optimal plan.</li>
-<li>High-entropy interpolation: If the intermediate distributions
-    <span class="arithmatex">\(p_t\)</span> are high entropy (e.g., due to injected noise), then the
-    flow might prioritize entropy regularization over transport cost
-    minimization — leading to Schrödinger-type transport, not
-    Monge-optimal transport.</li>
-</ol>
-<p><a id="orgbaa11f3"></a></p>
-<h1 id="answer-witn-minimal-poetry">Answer witn minimal poetry</h1>
-<p><strong>*“Does the flow induced by the ODE yield an optimal transport plan
-between <span class="arithmatex">\(p_0\)</span> and \(p^</strong>\)?”**</p>
-<p><a id="org0ef5058"></a></p>
-<h3 id="sometimes-yes-if">Sometimes yes, if:</h3>
-<ul>
-<li>The flow map <span class="arithmatex">\(X_1(x)\)</span> is the gradient of a convex function.</li>
-<li><span class="arithmatex">\(p_0\)</span> is absolutely continuous.</li>
-<li>You&rsquo;re using quadratic cost.</li>
-</ul>
-<p><a id="org2aac553"></a></p>
-<h3 id="often-not-unless">Often not, unless:</h3>
-<ul>
-<li>The velocity field <span class="arithmatex">\(u_t\)</span> is carefully constructed.</li>
-<li>You&rsquo;re in special cases like Gaussian <span class="arithmatex">\(p_0, p^*\)</span> or linear score
-    models.</li>
-</ul>
-<p><a id="orgc79e239"></a></p>
-<h3 id="but-it-can-be-close-especially">But it can be close, especially:</h3>
-<ul>
-<li>When interpolations are near-Wasserstein geodesics.</li>
-<li>In small-noise limits of Schrödinger bridge or score-based models.</li>
-</ul>                    </article>
-                </aside><!-- /#featured -->
-                    <section id="content" class="body">
-                        <h1>Other articles</h1>
-                        <hr />
-                        <ol id="posts-list" class="hfeed">
+to the amount of …</p>
+                        <a class="readmore" href="../transport.html">read more</a>
+                    </div><!-- /.entry-content -->
+                </article></li>
 
                 <li><article class="hentry">
                     <header>
